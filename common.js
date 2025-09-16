@@ -7,6 +7,6 @@ document.addEventListener("DOMContentLoaded",function(){
         let manu = {"height":textsHeight+textsHeight/5+"px"};
         Object.assign(mainVisual.style ,manu);
     }
-    
+    resizeTheHeight();
     window.addEventListener("resize",resizeTheHeight);
 })
