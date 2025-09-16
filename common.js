@@ -1,12 +1,15 @@
-document.addEventListener("DOMContentLoaded",function(){
-    const mainText = this.querySelector(".main-text");
-    const mainVisual = this.querySelector(".mainVisual");
+document.addEventListener("DOMContentLoaded", function() {
+    const mainText = document.querySelector(".main-text");
+    const mainVisual = document.querySelector(".mainVisual");
 
-    function resizeTheHeight(){
-        let textsHeight = mainText.offsetHeight;
-        let manu = {"height":textsHeight+textsHeight/5+"px"};
-        Object.assign(mainVisual.style ,manu);
+    function resizeTheHeight() {
+        if (mainText && mainVisual) {
+            let textsHeight = mainText.offsetHeight;
+            let newHeight = textsHeight + textsHeight / 5;
+            mainVisual.style.height = newHeight + "px";
+        }
     }
+
     resizeTheHeight();
-    window.addEventListener("resize",resizeTheHeight);
-})
+    window.addEventListener("resize", resizeTheHeight);
+});
